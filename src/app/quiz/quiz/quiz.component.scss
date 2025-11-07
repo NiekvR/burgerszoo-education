@@ -1,0 +1,52 @@
+:host {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  .container {
+    margin: 0 30px 30px 30px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &.overflow-hidden {
+      overflow: auto;
+    }
+
+    img.start-image {
+      flex: 0 0 250px;
+      max-height: 250px;
+      width: 414px;
+    }
+
+    .start-image {
+      flex: 0 0 250px;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+
+    .score {
+      font-size: 50px;
+      color: #1E7E2E;
+
+      &.failed {
+        color: #BA0718;
+      }
+    }
+  }
+
+  button, .tern {
+    margin-bottom: 5px;
+  }
+
+  .tern {
+    max-width: 50%;
+
+  }
+}

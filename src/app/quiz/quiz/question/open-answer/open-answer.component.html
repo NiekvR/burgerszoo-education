@@ -1,0 +1,13 @@
+<ng-container *ngIf="!result">
+  <div class="form-group">
+    <input [(ngModel)]="answer" (ngModelChange)="onChange()" [disabled]="disabled">
+  </div>
+</ng-container>
+<ng-container *ngIf="result">
+  <p class="result flex space-between" [class.correct]="answer.trim().toLowerCase() === correctAnswer.trim().toLowerCase()">
+    Jouw antwoord: {{ answer }}
+    <fa-icon *ngIf="answer.trim().toLowerCase() === correctAnswer.trim().toLowerCase()" [icon]="faCheck"></fa-icon>
+    <fa-icon *ngIf="!(answer.trim().toLowerCase() === correctAnswer.trim().toLowerCase())" [icon]="faTimes"></fa-icon>
+  </p>
+  <p>Antwoord: {{ correctAnswer }}</p>
+</ng-container>

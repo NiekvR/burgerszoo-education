@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "burgerszoo--scavenger-hunt"
+  },
+  "targets": {
+    "burgerszoo--scavenger-hunt": {
+      "hosting": {
+        "burgerszoo-education": [
+          "burgerszoo--scavenger-hunt"
+        ]
+      }
+    }
+  }
+}

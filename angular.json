@@ -24,7 +24,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -87,7 +87,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           }
@@ -116,9 +116,21 @@
               "devServerTarget": "burgerszoo-education:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }
   },
-  "defaultProject": "burgerszoo-education"
+  "defaultProject": "burgerszoo-education",
+  "cli": {
+    "analytics": "5b2acd49-cf9c-4f8c-ac26-63e2d72eecf7"
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "scss"
+    }
+  }
 }

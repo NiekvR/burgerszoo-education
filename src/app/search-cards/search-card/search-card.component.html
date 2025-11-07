@@ -1,0 +1,14 @@
+<div class="image-container" [style.border-color]="statusColor">
+  <img src="/assets/img/cards/chacalaca.jpg"/>
+</div>
+<div class="text-container">
+  <div class="background">
+    <p>{{ cardData.nameNl }}</p>
+    <p>{{ cardData.nameDE }}</p>
+    <p><i>{{ cardData.nameSC }}</i></p>
+    <p>{{ cardData.size }}</p>
+    <p>{{ cardData.continent }}</p>
+    <p><span class="status" [style.background-color]="statusColor"></span>{{ statusText }}</p>
+  </div>
+  <img *ngIf="checked" class="check" src="/assets/img/check_blue.png">
+</div>

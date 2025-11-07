@@ -1,0 +1,54 @@
+<app-progress *ngIf="!start && question" [currentState]="progress"></app-progress>
+<div class="container" [class.overflow-hidden]="question">
+  <ng-container *ngIf="start">
+    <img class="start-image" [src]="quiz.image">
+
+    <h1>{{ quiz.title }}</h1>
+
+    <p *ngFor="let paragraph of quiz.description">{{ paragraph }}</p>
+  </ng-container>
+
+  <ng-container *ngIf="!start && question">
+    <app-question [question]="question"></app-question>
+  </ng-container>
+
+  <ng-container *ngIf="!start && !question&& !personalInfo">
+    <img class="start-image" [src]="quiz.image">
+    <app-personal-information [(comment)]="result.comments" [text]="quiz.personalInformation"></app-personal-information>
+  </ng-container>
+
+  <ng-container *ngIf="!start && !question && personalInfo">
+    <img class="start-image" [src]="quiz.image">
+
+    <h1>EINDE</h1>
+
+    <p>Jouw voorlopige score is:</p>
+
+    <h1 class="score" [class.failed]="(result.score / result.total * 100) < 67">{{result.score}}/{{result.total}}</h1>
+
+    <p>Let op: de voorlopige score is erg kritisch en kijkt of je het antwoord tot op de leter nauwkeurig goed hebt beantwoord.
+    Je kan je score hieronder nakijken en vergelijken met het juiste antwoord voor een beter resultaat. Er kunnen dus ook geen rechten worden ontleent aan dit cijfer.
+    </p>
+
+    <h2>Resultaten:</h2>
+    <ng-container *ngFor="let questionRes of quiz.questions; index as i">
+      <h3 class="bold">Vraag {{i + 1}}</h3>
+      <app-question
+        [question]="questionRes"
+        [answer]="result.answers[i]"
+        [result]="true"
+      ></app-question>
+    </ng-container>
+
+  </ng-container>
+</div>
+
+<div class="flex align-items-center flex-column">
+  <button *ngIf="start" (click)="startQuiz()">START</button>
+  <div *ngIf="!start && question" class="flex">
+    <app-count-down (timeChange)="timeoutChange($event)"></app-count-down>
+    <button [disabled]="result.answers[ round ] == null && !timeout" (click)="next()">{{ round === quiz.questions.length ? 'RESULTAAT' : 'VOLGENDE' }}</button>
+  </div>
+
+  <button *ngIf="!start && !question && !personalInfo" [disabled]="!result.comments" (click)="addPersonalInfo()">{{ 'VOLGENDE' }}</button>
+</div>

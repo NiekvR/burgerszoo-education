@@ -1,0 +1,11 @@
+<div class="container">
+  <img [src]="'/assets/img/cards/' + cardData.image">
+  <h1>{{ cardData.nameNl }}</h1>
+  <p>{{ cardData.nameDE }}</p>
+  <p><i>{{ cardData.nameSC }}</i></p>
+  <p>{{ cardData.size }}</p>
+  <p>{{ cardData.continent }}</p>
+  <p><span class="status" [style.background-color]="statusColor"></span>{{ statusText }}</p>
+  <button (click)="checkBird()" [disabled]="checked"><img *ngIf="checked" class="check" src="/assets/img/check_white.png">GEZIEN</button>
+  <button (click)="back()">TERUG</button>
+</div>

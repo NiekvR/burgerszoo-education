@@ -1,0 +1,12 @@
+:host {
+  .loader {
+    height: 10px;
+    width: 100%;
+    background-color: #CCCCCC;
+
+    .progress {
+      height: 100%;
+      background-color: #1E7E2E;
+    }
+  }
+}

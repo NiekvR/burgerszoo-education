@@ -1,0 +1,26 @@
+<div class="form-group p-b-10">
+  <label>Selecteer toets: </label>
+  <select (change)="onChange($event)">
+    <option value=""></option>
+    <option value="1203">Desert Dierzichtbaarheid</option>
+    <option value="101">Desert Dierzichtbaarheid Test</option>
+  </select>
+</div>
+<div class="results header">
+  <div></div>
+  <span class="result break-word" *ngFor="let question of quiz.questions">{{ question.answer }}</span>
+  <span class="result score">%</span>
+  <span class="comments">COMMENTS</span>
+</div>
+<div class="flex overflow-auto flex-column">
+  <div *ngFor="let result of subResults; let i = index" class="results">
+    <div>{{ i }}</div>
+    <span class="flex space-between result" *ngFor="let index of getAnswerIds(result)" [class.correct]="isCorrect(result.answers[ index ], index)">
+      <span class="break-word max-width">{{ result.answers[ index ]}}</span>
+      <fa-icon *ngIf="isCorrect(result.answers[ index ], index)" [icon]="faCheck"></fa-icon>
+      <fa-icon *ngIf="!isCorrect(result.answers[ index ], index)" [icon]="faTimes"></fa-icon>
+    </span>
+    <span class=" result score" [class.correct]="(result.score / result.total * 100) > 66">{{ result.score / result.total * 100 }}</span>
+    <span *ngIf="result.comments" class="comments">{{ result.comments }}</span>
+  </div>
+</div>

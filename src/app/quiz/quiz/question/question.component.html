@@ -1,0 +1,27 @@
+<h1 *ngIf="!result">{{ question.category.title }}</h1>
+<p *ngIf="question.category.description">{{ question.category.description }}</p>
+<div class="question-container">
+  <ng-container *ngIf="question.type === 'sound'">
+    <audio controls #audio>
+      <source [src]="question.sound" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+    <div class="answers">
+      <app-answer *ngFor="let answer of question.answers; let i = index" [answer]="answer" [left]="i % 2 === 0" [index]="i"></app-answer>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="question.type === 'text'">
+    <img *ngIf="question.image" [src]="question.image">
+    <p>{{ question.question }}</p>
+    <div class="answers">
+      <app-answer *ngFor="let answer of question.answers; let i = index" [answer]="answer" [index]="i"></app-answer>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="question.type === 'open'">
+    <img *ngIf="question.image" [src]="question.image">
+    <p>{{ question.question }}</p>
+    <div class="answers">
+      <app-open-answer [disabled]="timeout" [answer]="answer" [correctAnswer]="question.answer" [result]="result"></app-open-answer>
+    </div>
+  </ng-container>
+</div>

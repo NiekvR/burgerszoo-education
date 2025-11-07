@@ -1,0 +1,16 @@
+:host {
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  .form-group {
+    flex: 1;
+
+    textarea {
+      flex: 1;
+      font-size: 20px;
+    }
+  }
+}

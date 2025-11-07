@@ -1,0 +1,13 @@
+<ng-container *ngIf="answer.image">
+  <div [style.background-image]="'url(' + answer.image + ')'" [class.left]="left" [class.selected]="selected" class="imaged">
+    <div class="answer-bar">{{ answer.answer }}</div>
+  </div>
+</ng-container>
+<ng-container *ngIf="!answer.image">
+  <div class="radio">
+    <div class="radio-button" [class.selected]="selected">
+      <div *ngIf="selected" class="radio-selected"></div>
+    </div>
+    <p>{{ answer.answer }}</p>
+  </div>
+</ng-container>

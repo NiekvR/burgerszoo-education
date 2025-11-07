@@ -1,0 +1,58 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  flex: 0 0 140px;
+  border-bottom: 1px solid #CCCCCC;
+  cursor: pointer;
+
+  .image-container {
+    border-left: 5px solid #ffc001;
+    height: 140px;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  .text-container {
+    flex: 1;
+    padding: 5px 15px;
+
+    .background {
+      position: relative;
+      padding: 5px 15px;
+      width: 100%;
+      -webkit-mask-image: url('../../../assets/svg/mask-horizontal.svg');
+      background: #e6f5e9;
+      mask-mode: alpha;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: 100% 100%;
+      mask-size: 100% 100%;
+      -webkit-mask-position: center;
+      mask-position: center;
+
+      p {
+        display: flex;
+        align-items: center;
+        padding: 0;
+
+        .status {
+          height: 15px;
+          width: 15px;
+          background-color: #ffc001;
+          border: 1px solid #363636;
+          border-radius: 2px;
+          margin-right: 5px;
+        }
+      }
+    }
+
+    .check {
+      height: 32px;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+    }
+  }
+}

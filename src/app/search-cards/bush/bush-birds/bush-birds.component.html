@@ -1,0 +1,2 @@
+<app-search-card *ngFor="let bird of birds" [cardData]="bird" (click)="selectBird(bird)"></app-search-card>
+<app-card-detail *ngIf="selectedBird" [cardData]="selectedBird"></app-card-detail>
