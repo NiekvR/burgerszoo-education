@@ -1,6 +1,7 @@
 import { Quiz } from '../../app/quiz/model/quiz';
 
 export const RAINFOREST: Quiz = {
+  timed: false,
   title: 'REIS DOOR HET REGENWOUD',
   image: 'assets/img/burgers_bush_small.png',
   description: [
@@ -394,6 +395,7 @@ export const RAINFOREST: Quiz = {
 };
 
 export const DESERT_ANIMALS: Quiz = {
+  timed: true,
   title: 'DESERT DIEREN',
   image: 'assets/img/Mexicaanse_Nonpareil.jpg',
   description: [
@@ -495,6 +497,7 @@ export const DESERT_ANIMALS: Quiz = {
 };
 
 export const DESERT_ANIMALS_TEST: Quiz = {
+  timed: true,
   title: 'DESERT DIEREN',
   image: 'assets/img/Mexicaanse_Nonpareil.jpg',
   description: [

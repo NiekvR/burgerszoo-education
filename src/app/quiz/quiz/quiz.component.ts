@@ -18,6 +18,7 @@ export class QuizComponent implements OnInit {
   public quiz = RAINFOREST;
 
   public start = true;
+  public timed = true;
   public round: number;
   public question: Question;
   public progress = 0;
@@ -32,9 +33,14 @@ export class QuizComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(param => {
-      if (param.id === '1203') {
+      console.log(param.id);
+      if (param.id === '1203' || param.id === '1555') {
         this.quiz = DESERT_ANIMALS;
         this.result.quiz = '1203';
+        if (param.id === '1555') {
+          this.result.quiz = '1555';
+          this.timed = false;
+        }
       }
       if (param.id === '101') {
         this.quiz = DESERT_ANIMALS_TEST;
@@ -80,7 +86,7 @@ export class QuizComponent implements OnInit {
       .subscribe(round => {
         this.progress = ((round + 1) / (this.quiz.questions.length + 1)) * 100;
         this.question = this.quiz.questions[ round ];
-        if (round !== 0) {
+        if (round !== 0 && this.timed) {
           this.countDown.ngOnInit();
         }
       });
@@ -101,6 +107,7 @@ export class QuizComponent implements OnInit {
 
   public timeoutChange(timeout: number) {
     this.timeout = timeout === 0;
+    console.log(this.timeout);
     if (timeout) {
       this.quizService.setCurrentIndex('');
     }

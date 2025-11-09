@@ -9,7 +9,7 @@
   </ng-container>
 
   <ng-container *ngIf="!start && question">
-    <app-question [question]="question"></app-question>
+    <app-question [question]="question" [timeout]="timeout"></app-question>
   </ng-container>
 
   <ng-container *ngIf="!start && !question&& !personalInfo">
@@ -46,7 +46,7 @@
 <div class="flex align-items-center flex-column">
   <button *ngIf="start" (click)="startQuiz()">START</button>
   <div *ngIf="!start && question" class="flex">
-    <app-count-down (timeChange)="timeoutChange($event)"></app-count-down>
+    <app-count-down (timeChange)="timeoutChange($event)" *ngIf="timed"></app-count-down>
     <button [disabled]="result.answers[ round ] == null && !timeout" (click)="next()">{{ round === quiz.questions.length ? 'RESULTAAT' : 'VOLGENDE' }}</button>
   </div>
 

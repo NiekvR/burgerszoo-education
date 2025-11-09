@@ -13,11 +13,12 @@ export class QuestionComponent implements OnChanges {
   @Input() question: Question;
   @Input() answer: number | string;
   @Input() result = false;
-  public timeout = false;
+  @Input() timeout = false;
 
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges) {
+    console.log(changes);
     if (!changes.question.firstChange && !!changes.question.currentValue) {
       this.openAnswer.answer = !!this.answer ? this.answer as string : '';
       if (!!changes.question.currentValue.sound) {
