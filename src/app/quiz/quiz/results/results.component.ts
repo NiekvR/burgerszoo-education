@@ -39,7 +39,7 @@ export class ResultsComponent implements OnInit {
 
   public onChange(event: Event) {
     this.subResults = this.results.filter(result => result.quiz === (event.target as HTMLInputElement).value);
-    if ((event.target as HTMLInputElement).value === '1203') {
+    if ((event.target as HTMLInputElement).value === '1203' || (event.target as HTMLInputElement).value === '1555') {
       this.quiz = DESERT_ANIMALS;
     } else if ((event.target as HTMLInputElement).value === '101') {
       this.quiz = DESERT_ANIMALS_TEST;

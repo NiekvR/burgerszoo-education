@@ -12,7 +12,7 @@
     <app-question [question]="question" [timeout]="timeout"></app-question>
   </ng-container>
 
-  <ng-container *ngIf="!start && !question&& !personalInfo">
+  <ng-container *ngIf="!start && !question && !personalInfo">
     <img class="start-image" [src]="quiz.image">
     <app-personal-information [(comment)]="result.comments" [text]="quiz.personalInformation"></app-personal-information>
   </ng-container>
