@@ -8,7 +8,7 @@ import { map, takeWhile, timeout } from 'rxjs/operators';
   styleUrls: ['./count-down.component.scss']
 })
 export class CountDownComponent implements OnInit {
-  @Input() seconds = 15;
+  @Input() seconds = 20;
   public timeout = false;
   @Output() timeChange = new EventEmitter<number>();
 

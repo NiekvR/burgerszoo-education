@@ -401,7 +401,7 @@ export const DESERT_ANIMALS: Quiz = {
   description: [
     'Desert Dierzichtbaarheid'
   ],
-  personalInformation: 'Dat was de laatste vraag! Straks krijg je te zien wat de goede antwoorden waren! Vul hier je naam (voornaame en achternaam) in!',
+  personalInformation: 'Vul hier je naam (voornaam en achternaam) in!',
   questions: [
     {
       category: {

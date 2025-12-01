@@ -6,18 +6,14 @@
     <h1>{{ quiz.title }}</h1>
 
     <p *ngFor="let paragraph of quiz.description">{{ paragraph }}</p>
+    <app-personal-information [(comment)]="result.comments" [text]="quiz.personalInformation"></app-personal-information>
   </ng-container>
 
   <ng-container *ngIf="!start && question">
     <app-question [question]="question" [timeout]="timeout"></app-question>
   </ng-container>
 
-  <ng-container *ngIf="!start && !question && !personalInfo">
-    <img class="start-image" [src]="quiz.image">
-    <app-personal-information [(comment)]="result.comments" [text]="quiz.personalInformation"></app-personal-information>
-  </ng-container>
-
-  <ng-container *ngIf="!start && !question && personalInfo">
+  <ng-container *ngIf="!start && !question">
     <img class="start-image" [src]="quiz.image">
 
     <h1>EINDE</h1>
@@ -49,6 +45,4 @@
     <app-count-down (timeChange)="timeoutChange($event)" *ngIf="timed"></app-count-down>
     <button [disabled]="result.answers[ round ] == null && !timeout" (click)="next()">{{ round === quiz.questions.length ? 'RESULTAAT' : 'VOLGENDE' }}</button>
   </div>
-
-  <button *ngIf="!start && !question && !personalInfo" [disabled]="!result.comments" (click)="addPersonalInfo()">{{ 'VOLGENDE' }}</button>
 </div>
