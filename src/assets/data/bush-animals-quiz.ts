@@ -88,7 +88,7 @@ export const BUSH_ANIMALS_TEST: Quiz = {
       question: 'Welk dier is dit?',
       image: 'assets/img/montserrattroepiaal.jpg',
       type: 'open',
-      answer: 'Halsbandcotinga'
+      answer: 'Montserrat troepiaal'
     },
     {
       category: {
@@ -97,7 +97,7 @@ export const BUSH_ANIMALS_TEST: Quiz = {
       question: 'Welk dier is dit?',
       image: 'assets/img/paradijstangara.jpg',
       type: 'open',
-      answer: 'Paradijstangara'
+      answer: 'Paradijstangare'
     },
     {
       category: {
@@ -208,7 +208,7 @@ export const BUSH_ANIMALS: Quiz = {
       question: 'Welk dier is dit?',
       image: 'assets/img/geelpoot-suikervogel.jpg',
       type: 'open',
-      answer: 'Geelpoot suikervogel'
+      answer: 'Purpersuikervogel'
     }
   ]
 };
