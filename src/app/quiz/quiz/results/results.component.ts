@@ -24,7 +24,6 @@ export class ResultsComponent implements OnInit {
     this.quizService.getAllResults()
       .subscribe(results => {
         this.results = results;
-        console.log(results);
         this.subResults = results.filter(result => !result.quiz);
       });
   }
@@ -41,12 +40,14 @@ export class ResultsComponent implements OnInit {
   public onChange(event: Event) {
     console.log((event.target as HTMLInputElement).value);
     this.subResults = this.results.filter(result => {
-      if (result.quiz === '1203' || result.quiz === '1555' || result.quiz === '101') {
+      if ((event.target as HTMLInputElement).value === '1203' ||
+        (event.target as HTMLInputElement).value === '1555' ||
+        (event.target as HTMLInputElement).value === '101') {
         return result.quiz === (event.target as HTMLInputElement).value;
-      } else if (result.quiz === '1533') {
-        return result.quiz === (event.target as HTMLInputElement).value || '1666' === (event.target as HTMLInputElement).value;
-      } else if (result.quiz === '102') {
-        return result.quiz === (event.target as HTMLInputElement).value || '103' === (event.target as HTMLInputElement).value;
+      } else if ((event.target as HTMLInputElement).value === '1533') {
+        return result.quiz === (event.target as HTMLInputElement).value || result.quiz === '1666';
+      } else if ((event.target as HTMLInputElement).value === '102') {
+        return result.quiz === (event.target as HTMLInputElement).value || result.quiz === '103';
       }
     });
     if ((event.target as HTMLInputElement).value === '1203' || (event.target as HTMLInputElement).value === '1555') {
