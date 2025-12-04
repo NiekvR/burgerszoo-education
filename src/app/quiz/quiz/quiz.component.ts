@@ -99,6 +99,9 @@ export class QuizComponent implements OnInit {
       .subscribe(round => {
         this.progress = ((round + 1) / (this.quiz.questions.length + 1)) * 100;
         this.question = this.quiz.questions[ round ];
+        if (!this.question) {
+          this.quizService.addQuizResults(this.result);
+        }
         if (round !== 0 && this.timed) {
           this.countDown.ngOnInit();
         }
@@ -120,7 +123,6 @@ export class QuizComponent implements OnInit {
 
   public timeoutChange(timeout: number) {
     this.timeout = timeout === 0;
-    console.log(this.timeout);
     if (timeout) {
       this.quizService.setCurrentIndex('');
     }

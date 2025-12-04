@@ -18,7 +18,6 @@ export class QuestionComponent implements OnChanges {
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log(changes);
     if (!changes.question.firstChange && !!changes.question.currentValue) {
       this.openAnswer.answer = !!this.answer ? this.answer as string : '';
       if (!!changes.question.currentValue.sound) {

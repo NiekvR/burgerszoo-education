@@ -1,18 +1,21 @@
-import { Injectable, OnDestroy } from '@angular/core';
+import {inject, Injectable, OnDestroy} from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { filter } from 'rxjs/operators';
 import { Result } from '../model/result';
+import {addDoc, collection, collectionData, Firestore} from "@angular/fire/firestore";
 
 @Injectable({
   providedIn: 'root'
 })
 export class QuizService implements OnDestroy {
+  private firestore = inject(Firestore);
+
+  private resultsCollection = collection(this.firestore, 'result');
 
   private currentRound = new BehaviorSubject<number>(0);
   private currentIndex = new BehaviorSubject<number | string>(null);
 
-  constructor(private db: AngularFirestore) { }
+  constructor() { }
 
   ngOnDestroy() {
     this.currentRound.complete();
@@ -46,16 +49,10 @@ export class QuizService implements OnDestroy {
 
 
   public addQuizResults(result: Result) {
-    this.db.collection<Result>('result')
-      .add(result);
+    return addDoc(this.resultsCollection, result);
   }
 
   public getAllResults(): Observable<Result[]> {
-    return this.db.collection<Result>('result').snapshotChanges().pipe(
-      map(list => list.map(a => {
-        const item = a.payload.doc.data() as Result;
-        item.id = a.payload.doc.id;
-        return item;
-      })));
+    return collectionData(this.resultsCollection) as Observable<Result[]>
   }
 }
