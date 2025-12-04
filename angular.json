@@ -67,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "burgerszoo-education:build"
+            "buildTarget": "burgerszoo-education:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "burgerszoo-education:build:production"
+              "buildTarget": "burgerszoo-education:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "burgerszoo-education:build"
+            "buildTarget": "burgerszoo-education:build"
           }
         },
         "test": {
