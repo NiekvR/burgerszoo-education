@@ -6,7 +6,7 @@
     "burgerszoo--scavenger-hunt": {
       "hosting": {
         "burgerszoo-education": [
-          "burgerszoo--scavenger-hunt"
+          "burgers-zoo-academy"
         ]
       }
     }
