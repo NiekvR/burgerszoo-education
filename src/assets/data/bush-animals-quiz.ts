@@ -212,3 +212,105 @@ export const BUSH_ANIMALS: Quiz = {
     }
   ]
 };
+
+export const BUSH_ANIMALS_HER: Quiz = {
+  timed: true,
+  title: 'BUSH DIEREN',
+  image: 'assets/img/rode_tangara.jpg',
+  description: [
+    'Bush Dierzichtbaarheid Herkansing'
+  ],
+  personalInformation: 'Vul hier je naam (voornaam en achternaam) in!',
+  questions: [
+    {
+      category: {
+        title: 'BUSH DIEREN',
+      },
+      question: 'Welk dier is dit?',
+      image: 'assets/img/her/roelroel.jpeg',
+      type: 'open',
+      answer: 'Roelroel'
+    },
+    {
+      category: {
+        title: 'BUSH DIEREN',
+      },
+      question: 'Welk dier is dit?',
+      image: 'assets/img/her/groene_muscaatduif.jpeg',
+      type: 'open',
+      answer: 'Groene muscaatduif'
+    },
+    {
+      category: {
+        title: 'BUSH DIEREN',
+      },
+      question: 'Welk dier is dit?',
+      image: 'assets/img/her/schreeuwpiha.jpg',
+      type: 'open',
+      answer: 'Schreeuwpiha'
+    },
+    {
+      category: {
+        title: 'BUSH DIEREN',
+      },
+      question: 'Welk dier is dit?',
+      image: 'assets/img/her/rodetangara.jpg',
+      type: 'open',
+      answer: 'Rode tangara'
+    },
+    {
+      category: {
+        title: 'BUSH DIEREN',
+      },
+      question: 'Welk dier is dit?',
+      image: 'assets/img/her/fazantduif.jpg',
+      type: 'open',
+      answer: 'Groennek Fazantduif'
+    },
+    {
+      category: {
+        title: 'BUSH DIEREN',
+      },
+      question: 'Welk dier is dit?',
+      image: 'assets/img/her/groenvleugelduif.webp',
+      type: 'open',
+      answer: 'Groenvleugelduif'
+    },
+    {
+      category: {
+        title: 'BUSH DIEREN',
+      },
+      question: 'Welk dier is dit?',
+      image: 'assets/img/her/shamalijster.jpg',
+      type: 'open',
+      answer: 'Shamalijster'
+    },
+    {
+      category: {
+        title: 'BUSH DIEREN',
+      },
+      question: 'Welk dier is dit?',
+      image: 'assets/img/her/soembawalijster.jpeg',
+      type: 'open',
+      answer: 'Soembawalijster'
+    },
+    {
+      category: {
+        title: 'BUSH DIEREN',
+      },
+      question: 'Welk dier is dit?',
+      image: 'assets/img/her/zonneral.jpg',
+      type: 'open',
+      answer: 'Zonneral'
+    },
+    {
+      category: {
+        title: 'BUSH DIEREN',
+      },
+      question: 'Welk dier is dit?',
+      image: 'assets/img/her/zwartkopzaadkraker2.webp',
+      type: 'open',
+      answer: 'Zwartkopzaadkraker'
+    }
+  ]
+};
