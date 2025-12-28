@@ -59,10 +59,13 @@ export class QuizComponent implements OnInit {
           this.timed = false;
         }
       }
-      if (param.id === '2001') {
+      if (param.id === '2001' || param.id === '3001') {
         this.quiz = BUSH_ANIMALS_HER;
-        this.result.quiz = '2001';
-        this.timed = false;
+        this.result.quiz = '3001';
+        if (param.id === '2001') {
+          this.result.quiz = '2001';
+          this.timed = false;
+        }
       }
       this.result.total = this.quiz.questions.length;
       this.result.score = 0;
