@@ -1,0 +1,152 @@
+.svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.icon {
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.caterpillar {
+  svg {
+    width: 125px;
+    height: 125px;
+
+    #head {
+      animation: eat 20s infinite linear;
+    }
+  }
+
+  &.small {
+    svg {
+      width: 75px;
+      height: 75px;
+    }
+  }
+
+  &.extra-small {
+    svg {
+      width: 70px;
+      height: 70px;
+    }
+  }
+}
+
+.cocoon {
+  svg {
+    width: 125px;
+    height: 125px;
+
+    #head {
+      animation: jump 20s infinite ease-in-out;
+    }
+    #s1 {
+      animation: jump 20s infinite ease-in-out 0.1s;
+    }
+    #s2 {
+      animation: jump 20s infinite ease-in-out 0.2s;
+    }
+    #s3 {
+      animation: jump 20s infinite ease-in-out 0.3s;
+    }
+  }
+
+  &.small {
+    svg {
+      width: 75px;
+      height: 75px;
+    }
+  }
+
+  &.extra-small {
+    svg {
+      width: 70px;
+      height: 70px;
+    }
+  }
+}
+
+.butterfly {
+
+  &.mat-icon {
+    width: 125px;
+    height: 125px;
+  }
+  svg {
+    width: 125px;
+    height: 125px;
+
+    #wing_left {
+      animation: lwingAnimate 5s ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    #wing_right {
+      animation: rwingAnimate 5s ease-in-out infinite;
+      transform-origin: center;
+    }
+  }
+
+  &.small {
+    svg {
+      width: 75px;
+      height: 75px;
+    }
+  }
+
+  &.extra-small {
+    svg {
+      width: 70px;
+      height: 70px;
+    }
+  }
+}
+
+@keyframes jump {
+  0% {
+    transform: translate(0);
+  }
+  5% {
+    transform: translate(0, -3%);
+  }
+  10% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes lwingAnimate {
+  0% { transform: rotate3d(0, 1, 0, 80deg)}
+  50% { transform: rotate3d(0, 1, 0, 20deg)}
+  100% { transform: rotate3d(0, 1, 0, 80deg)}
+}
+
+@keyframes rwingAnimate {
+  0% { transform: rotate3d(0, 1, 0, -80deg)}
+  50% { transform: rotate3d(0, 1, 0, -20deg)}
+  100% { transform: rotate3d(0, 1, 0, -80deg)}
+}
+
+@keyframes eat {
+  0% {
+    transform: translate(0);
+  }
+  10% {
+    transform: translate(0, 3%);
+  }
+  40% {
+    transform: translate(0, 3%);
+  }
+  50% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(0);
+  }
+}

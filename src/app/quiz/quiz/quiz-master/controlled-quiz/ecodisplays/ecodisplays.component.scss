@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  .ecodisplays {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+
+    .badge {
+      height: 125px;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+<h1>{{ question.category.title }}</h1>
+<p *ngIf="question.category.description">{{ question.category.description }}</p>
+<div class="question-container">
+  <img *ngIf="question.image" [src]="question.image">
+  <p>{{ question.question }}</p>
+  <div class="answers w-100" *ngFor="let answer of question.answers; index as i">
+    <div class="radio">
+      <div class="radio-button" [class.selected]="!!totalAnswers && answer.correct">
+        <div *ngIf="!!totalAnswers && answer.correct" class="radio-selected"></div>
+      </div>
+      <p>{{ answer.answer }}</p>
+    </div>
+    <div
+      class="percentage"
+      [style.width]="(!!results && results[ i ] ? results[ i ] : 0)+ '%'"
+      [class.correct]="answer.correct"
+    ></div>
+  </div>
+  <p *ngIf="totalAnswers">Aantal antwoorden: {{totalAnswers}}</p>
+</div>

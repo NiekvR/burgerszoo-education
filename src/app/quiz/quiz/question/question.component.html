@@ -14,7 +14,7 @@
     <img *ngIf="question.image" [src]="question.image">
     <p>{{ question.question }}</p>
     <div class="answers">
-      <app-answer *ngFor="let answer of question.answers; let i = index" [answer]="answer" [index]="i"></app-answer>
+      <app-answer *ngFor="let answer of question.answers; let i = index" [answer]="answer" [index]="i + 1"></app-answer>
     </div>
   </ng-container>
   <ng-container *ngIf="question.type === 'open'">

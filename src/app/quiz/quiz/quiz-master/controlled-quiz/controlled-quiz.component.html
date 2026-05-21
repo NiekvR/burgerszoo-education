@@ -1,0 +1,17 @@
+<app-progress [currentState]="progress"></app-progress>
+<div class="container" [class.overflow-hidden]="question">
+  <app-ecodisplays *ngIf="publicQuiz.question === 0 && !selectedEcodisplays" (dataChange)="setSelectedEcodisplays($event)"></app-ecodisplays>
+  <div class="flex justify-content-center align-items-center h-100 flex-column" *ngIf="!question && (publicQuiz.question > 0 || !!selectedEcodisplays)">
+    Wachten op de volgende vraag...
+    <mat-icon class="butterfly" svgIcon="butterfly"></mat-icon>
+  </div>
+  <app-question *ngIf="!!question" [question]="question" [timeout]="timeout"></app-question>
+</div>
+<div class="flex align-items-center flex-column">
+  <div *ngIf="!!question" class="flex">
+    <app-count-down (timeChange)="timeoutChange($event)"></app-count-down>
+    <button *ngIf="!done" [disabled]="!!timeout || (answer === 0) || !answer" (click)="sendAnswer()">
+      {{ 'VERZENDEN' }}
+    </button>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="container">
+  <div *ngIf="!!publicQuiz">
+    <button *ngIf="!go && publicQuiz.question <= quiz.questions.length" (click)="start()">
+      {{ 'START' }}
+    </button>
+    <qrcode *ngIf="!!link"
+      [qrdata]="link"
+      [width]="256"
+      [errorCorrectionLevel]="'M'">
+    </qrcode>
+  </div>
+  <div class="h-100" *ngIf="go && publicQuiz.question <= quiz.questions.length">
+    <app-quiz-answers *ngIf="!!question" [question]="question" [answer]="answers"></app-quiz-answers>
+  </div>
+  <div *ngIf="publicQuiz.question > quiz.questions.length" class="flex flex-column align-items-center">
+    <h1>Einde quiz</h1>
+    <div>Dankjewel voor het meespelen!</div>
+    <button (click)="downloadData()">
+      {{ 'DOWNLOAD DATA' }}
+    </button>
+  </div>
+</div>
+<div class="flex align-items-center flex-column" *ngIf="publicQuiz.question <= quiz.questions.length">
+  <div class="flex" *ngIf="go">
+    <app-count-down (timeChange)="timeoutChange($event)" *ngIf="showTimer"></app-count-down>
+    <button (click)="next()">
+      {{ 'VOLGENDE' }}
+    </button>
+  </div>
+</div>
+
+

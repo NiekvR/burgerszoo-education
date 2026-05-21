@@ -11,4 +11,5 @@ export interface Question {
   answers?: Answer[];
   answer?: string;
   timed?: number;
+  ecodisplay?: string;
 }

@@ -2,7 +2,7 @@ import {inject, Injectable, OnDestroy} from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { Result } from '../model/result';
-import {addDoc, collection, collectionData, Firestore} from "@angular/fire/firestore";
+import {addDoc, collection, collectionData, Firestore} from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'

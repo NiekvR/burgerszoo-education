@@ -20,6 +20,7 @@ export class QuizComponent implements OnInit {
 
   public start = true;
   public timed = true;
+  public controlled = false;
   public round: number;
   public question: Question;
   public progress = 0;
@@ -54,6 +55,7 @@ export class QuizComponent implements OnInit {
       if (param.id === '102' || param.id === '103') {
         this.quiz = BUSH_ANIMALS_TEST;
         this.result.quiz = '102';
+        this.controlled = true;
         if (param.id === '103') {
           this.result.quiz = '103';
           this.timed = false;

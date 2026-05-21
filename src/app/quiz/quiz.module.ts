@@ -12,18 +12,22 @@ import { CountDownComponent } from './quiz/question/count-down/count-down.compon
 
 
 @NgModule({
-  declarations: [
-    QuizComponent,
+    declarations: [
+        QuizComponent,
+        QuestionComponent,
+        AnswerComponent,
+        PersonalInformationComponent,
+        ResultsComponent,
+        OpenAnswerComponent,
+        CountDownComponent
+    ],
+  exports: [
     QuestionComponent,
-    AnswerComponent,
-    PersonalInformationComponent,
-    ResultsComponent,
-    OpenAnswerComponent,
     CountDownComponent
   ],
-  imports: [
-    SharedModule,
-    FontAwesomeModule
-  ]
+    imports: [
+        SharedModule,
+        FontAwesomeModule
+    ]
 })
 export class QuizModule { }

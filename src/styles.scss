@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@900&family=Lato&display=swap');
+@import "styles/svg";
+@import "styles/answers";
 
 * {
   box-sizing: border-box;
@@ -120,10 +122,18 @@ button {
   height: 50px;
   border-width: 0 0 5px 0;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &:disabled {
     background-color: #1478A2;
     color: #C3C3C3;
+  }
+
+  &.success {
+    background-color: #bfd539;
+    border-bottom: 5px solid #a4c401;
   }
 }
 
@@ -158,3 +168,6 @@ button {
 .break-word {
   word-wrap: break-word;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

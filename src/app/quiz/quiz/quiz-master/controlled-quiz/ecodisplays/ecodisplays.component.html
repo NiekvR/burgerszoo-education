@@ -1,0 +1,15 @@
+<h1>Welke opleidingen heb je succesvol afgerond?</h1>
+<div class="ecodisplays">
+  <div class="radio square" *ngFor="let ecodisplay of ecodisplays" (click)="selectEcodisplay(ecodisplay)">
+    <div class="radio-button">
+      <div class="radio-selected" *ngIf="selectedEcodisplays[ ecodisplay ]"></div>
+    </div>
+    <img class="badge" [src]="'assets/img/badge/'+ ecodisplay +'.png'">
+  </div>
+</div>
+<div class="flex justify-content-center">
+  <button (click)="send()">
+    {{ 'VERZENDEN' }}
+  </button>
+</div>
+
