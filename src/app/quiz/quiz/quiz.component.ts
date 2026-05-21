@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DESERT_ANIMALS, DESERT_ANIMALS_TEST, RAINFOREST } from '../../../assets/data/rainforest-quiz';
-import { BUSH_ANIMALS, BUSH_ANIMALS_TEST } from '../../../assets/data/bush-animals-quiz';
+import { BUSH_ANIMALS, BUSH_ANIMALS_HER, BUSH_ANIMALS_TEST } from '../../../assets/data/bush-animals-quiz';
 import { QuizService } from './quiz.service';
 import { Question } from '../model/question';
 import { Result } from '../model/result';
@@ -58,6 +58,14 @@ export class QuizComponent implements OnInit {
         this.controlled = true;
         if (param.id === '103') {
           this.result.quiz = '103';
+          this.timed = false;
+        }
+      }
+      if (param.id === '2001' || param.id === '3001') {
+        this.quiz = BUSH_ANIMALS_HER;
+        this.result.quiz = '3001';
+        if (param.id === '2001') {
+          this.result.quiz = '2001';
           this.timed = false;
         }
       }

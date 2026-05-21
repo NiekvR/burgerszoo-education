@@ -3,7 +3,7 @@ import { QuizService } from '../quiz.service';
 import { DESERT_ANIMALS, DESERT_ANIMALS_TEST, RAINFOREST } from '../../../../assets/data/rainforest-quiz';
 import { Result, ResultAnswer } from '../../model/result';
 import { faCheck, faCross, faTimes } from '@fortawesome/free-solid-svg-icons';
-import {BUSH_ANIMALS, BUSH_ANIMALS_TEST} from '../../../../assets/data/bush-animals-quiz';
+import { BUSH_ANIMALS, BUSH_ANIMALS_HER, BUSH_ANIMALS_TEST } from '../../../../assets/data/bush-animals-quiz';
 
 @Component({
   selector: 'app-results',
@@ -12,6 +12,7 @@ import {BUSH_ANIMALS, BUSH_ANIMALS_TEST} from '../../../../assets/data/bush-anim
 })
 export class ResultsComponent implements OnInit {
   public quiz = RAINFOREST;
+  public quizID = '1533';
   public results: Result[];
   public subResults: Result[];
 
@@ -39,6 +40,7 @@ export class ResultsComponent implements OnInit {
 
   public onChange(event: Event) {
     console.log((event.target as HTMLInputElement).value);
+    this.quizID = (event.target as HTMLInputElement).value;
     this.subResults = this.results.filter(result => {
       if ((event.target as HTMLInputElement).value === '1203' ||
         (event.target as HTMLInputElement).value === '1555' ||
@@ -48,6 +50,8 @@ export class ResultsComponent implements OnInit {
         return result.quiz === (event.target as HTMLInputElement).value || result.quiz === '1666';
       } else if ((event.target as HTMLInputElement).value === '102') {
         return result.quiz === (event.target as HTMLInputElement).value || result.quiz === '103';
+      } else if ((event.target as HTMLInputElement).value === '2001') {
+        return result.quiz === (event.target as HTMLInputElement).value || result.quiz === '3001';
       }
     });
     if ((event.target as HTMLInputElement).value === '1203' || (event.target as HTMLInputElement).value === '1555') {
@@ -58,6 +62,8 @@ export class ResultsComponent implements OnInit {
       this.quiz = BUSH_ANIMALS;
     } else if ((event.target as HTMLInputElement).value === '102') {
       this.quiz = BUSH_ANIMALS_TEST;
+    } else if ((event.target as HTMLInputElement).value === '2001') {
+      this.quiz = BUSH_ANIMALS_HER;
     } else {
       this.quiz = RAINFOREST;
     }
