@@ -127,15 +127,15 @@ export const ParkJune2026: Quiz = {
       answers: [
         {
           answer: 'Oneens',
-          correct: false
+          correct: true
         },
         {
           answer: 'Geen mening',
-          correct: false
+          correct: true
         },
         {
           answer: 'Eens',
-          correct: false
+          correct: true
         }
       ]
     },
@@ -150,15 +150,15 @@ export const ParkJune2026: Quiz = {
       answers: [
         {
           answer: 'Oneens',
-          correct: false
+          correct: true
         },
         {
           answer: 'Geen mening',
-          correct: false
+          correct: true
         },
         {
           answer: 'Eens',
-          correct: false
+          correct: true
         }
       ]
     }
